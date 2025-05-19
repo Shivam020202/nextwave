@@ -21,16 +21,16 @@
 :root {
   --Black: #000000;
   --White: #ffffff;
-  --Primary: #3c210e;
-  --Secondary: #fedac2;
-  --Third: #f4d118;
-  --Four: #c72929;
-  --Color-1: #f5f1ed;
-  --Color-3: #5e5a56;
-  --Color-4: #28221d;
-  --Outline: #e4e4e4;
-  --Placeholder: #abb0b4;
-  --Border: rgba(255, 255, 255, 0.1);
+  --Primary: #1a4b78; /* Deep blue */
+  --Secondary: #e8f4ff; /* Very light blue */
+  --Third: #4c8dd3; /* Medium blue */
+  --Four: #2c6cb0; /* Royal blue */
+  --Color-1: #f7f9fa; /* Lightest gray */
+  --Color-3: #0062b2; /* Light blue */
+  --Color-4: #0d3c6e; /* Dark blue */
+  --Outline: #c5dcff; /* Light gray */
+  --Placeholder: #d3dce6; /* Light blue-gray */
+  --Border: rgba(230, 240, 255, 0.2); /* Translucent light blue */
 }
 
 /*---------- Reset css styles ----------- */
@@ -1036,6 +1036,8 @@ a:focus {
   border-bottom: solid 1px var(--Outline);
   background-color: var(--White);
   position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 #header-main .header-inner-wrap {
   display: -webkit-box;
@@ -1047,7 +1049,7 @@ a:focus {
   align-items: center;
 }
 #header-main .header-inner-wrap .header-logo {
-  padding: 30px 0;
+  padding: 0px 0;
   flex: none;
 }
 #header-main .header-inner-wrap .header-right {
@@ -1180,8 +1182,7 @@ a:focus {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  max-width: 1500px;
-  margin: 0 auto;
+  background-color: white;
 }
 .header.scrollHeader {
   position: sticky !important;
@@ -4019,6 +4020,7 @@ a.mapboxgl-ctrl-logo {
   overflow: hidden;
 }
 .effec-overlay img {
+  height: 100%;
   object-fit: cover;
   -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
   transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
@@ -6400,11 +6402,12 @@ a.mapboxgl-ctrl-logo {
 }
 .section-box-about.page-home-2 .image-wrap {
   max-width: 600px;
+  height: 100%;
   border-radius: 12px;
   overflow: hidden;
 }
 .section-box-about.page-home-2 .box-about {
-  padding: 48px 20px 0px;
+  padding: 18px 20px 0px;
 }
 .section-box-about.page-home-2 .box-about .heading-section {
   margin-bottom: 23px;
