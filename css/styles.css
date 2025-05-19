@@ -21,16 +21,21 @@
 :root {
   --Black: #000000;
   --White: #ffffff;
-  --Primary: #1a4b78; /* Deep blue */
-  --Secondary: #e8f4ff; /* Very light blue */
-  --Third: #4c8dd3; /* Medium blue */
-  --Four: #2c6cb0; /* Royal blue */
-  --Color-1: #f7f9fa; /* Lightest gray */
-  --Color-3: #0062b2; /* Light blue */
-  --Color-4: #0d3c6e; /* Dark blue */
-  --Outline: #c5dcff; /* Light gray */
-  --Placeholder: #d3dce6; /* Light blue-gray */
-  --Border: rgba(230, 240, 255, 0.2); /* Translucent light blue */
+  --Primary: #1a4b78; /* Deep blue - keeping original */
+  --Secondary: #e8f4ff; /* Very light blue - keeping original */
+  --Third: #009b91; /* Teal-green from your logo */
+  --Four: #2c6cb0; /* Royal blue - keeping original */
+  --Color-1: #f7f9fa; /* Lightest gray - keeping original */
+  --Color-3: #0062b2; /* Light blue - keeping original */
+  --Color-4: #002151; /* Darker version of your logo teal-green */
+  --Outline: #c5dcff; /* Light gray - keeping original */
+  --Placeholder: #d3dce6; /* Light blue-gray - keeping original */
+  --Border: rgba(
+    230,
+    240,
+    255,
+    0.2
+  ); /* Translucent light blue - keeping original */
 }
 
 /*---------- Reset css styles ----------- */
@@ -1976,7 +1981,7 @@ a:focus {
   background-color: var(--Secondary);
 }
 .tf-btn.btn-color-secondary {
-  background-color: var(--Secondary);
+  background-color: #3fca58;
 }
 .tf-btn.btn-color-white {
   background-color: var(--White);
@@ -2033,12 +2038,15 @@ a:focus {
   overflow: hidden;
   z-index: 2;
   gap: 6px;
-  color: var(--Primary);
+  color: white;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.about23 {
+  color: var(--Primary) !important;
 }
 .tf-btn.style-default i {
   font-size: 19px;
@@ -2047,7 +2055,7 @@ a:focus {
   background-color: var(--Primary);
 }
 .tf-btn.style-default:hover > span {
-  color: var(--White);
+  color: var(--White) !important;
 }
 .tf-btn.style-default:hover i {
   color: var(--White);
