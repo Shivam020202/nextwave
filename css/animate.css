@@ -4,7 +4,6 @@ Primary style
 
 -------------------------------- */
 .animationtext {
-  
 }
 
 .cd-words-wrapper {
@@ -36,9 +35,69 @@ Primary style
 
 .cd-words-wrapper .item-text,
 .cd-words-wrapper .item-text i {
+}
 
+/* 1. Parent container for the fading words */
+.cd-words-wrapper {
+  position: relative;
+  display: inline-block;
+  /* Adjust this min-width value!
+     Increase it until "medication management." is fully visible.
+     A good starting point might be around 250px or 280px, but test it. */
+  min-width: 280px; /* <--- INCREASE THIS VALUE */
+  overflow: hidden;
+  vertical-align: top;
+  text-align: left;
+}
 
- 
+/* 2. Styles for each individual text item that will fade */
+.animationtext .item-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 3. Styles for the currently visible text item */
+.animationtext .item-text.is-visible {
+  opacity: 1;
+  animation: cd-fade-in-soft 1.2s forwards;
+}
+
+/* 4. Styles for the currently hidden (but soon to be visible/fading out) text item */
+.animationtext .item-text.is-hidden {
+  opacity: 0;
+  animation: cd-fade-out-soft 1.2s forwards;
+}
+
+/* 5. Keyframes for the soft fade-in animation */
+@keyframes cd-fade-in-soft {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 6. Keyframes for the soft fade-out animation */
+@keyframes cd-fade-out-soft {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* -------------------------------- 
@@ -251,7 +310,7 @@ xtype
 
 .animationtext.type .cd-words-wrapper::after {
   /* vertical bar */
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 50%;
@@ -579,7 +638,7 @@ xloading-bar
 -------------------------------- */
 .animationtext.loading-bar span {
   display: inline-block;
-  padding: .2em 0;
+  padding: 0.2em 0;
 }
 
 .animationtext.loading-bar .cd-words-wrapper {
@@ -589,7 +648,7 @@ xloading-bar
 
 .animationtext.loading-bar .cd-words-wrapper::after {
   /* loading bar */
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -610,7 +669,7 @@ xloading-bar
 }
 
 .animationtext.loading-bar .item-text {
-  top: .2em;
+  top: 0.2em;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
@@ -639,7 +698,7 @@ xslide
 
 .animationtext.slide .item-text {
   opacity: 0;
-  top: .2em;
+  top: 0.2em;
 }
 
 .animationtext.slide .item-text.is-visible {
@@ -799,7 +858,7 @@ xclip
 
 .animationtext.clip .cd-words-wrapper::after {
   /* line */
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -957,7 +1016,11 @@ xrotate-3
   transform: rotateY(180deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 13.41%, rgba(255, 255, 255, 0) 100%),
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.75) 13.41%,
+      rgba(255, 255, 255, 0) 100%
+    ),
     linear-gradient(180deg, #ffcb52 0%, #ff7b02 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1381,7 +1444,11 @@ xpush
 }
 
 .type-color-1 i {
-  background-image: linear-gradient(180deg, #ffffff 68.51%, rgb(39, 47, 121) 93%) !important;
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 68.51%,
+    rgb(39, 47, 121) 93%
+  ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: unset !important;
