@@ -24,7 +24,30 @@
 
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css" />
+    <style>
+        .map-container {
+            width: 100vw;
+            /* Full viewport width */
+            height: 50vh;
+            /* Half viewport height */
+            overflow: hidden;
+            /* Hide any overflow */
+        }
 
+        .map-container iframe {
+            width: 100%;
+            /* Make iframe fill its container's width */
+            height: 100%;
+            /* Make iframe fill its container's height */
+            border: 0;
+            /* Remove default iframe border */
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -317,6 +340,12 @@
                 <div id="map"></div>
             </div> -->
             <!--map -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.1268105546724!2d-79.6393223!3d43.5830749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b46d756cb7869%3A0x5c73cefa72ec051c!2s325%20Central%20Pkwy%20W%20%2330%2C%20Mississauga%2C%20ON%20L5B%203X9%2C%20Canada!5e0!3m2!1sen!2sin!4v1748694958685!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
 
             <!-- section-contact -->
             <section class="section-contact page-contact ">
