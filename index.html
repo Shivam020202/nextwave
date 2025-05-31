@@ -25,6 +25,248 @@
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css" />
 
+    <style>
+        .primary-care-wrapper {
+            margin: 0;
+            padding: 40px 20px;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            /* background: #f8fafc; */
+            /* min-height: 100vh; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .primary-care-container {
+            max-width: 1500px;
+            width: 100%;
+            height: 80vh;
+            max-height: 800px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        .primary-care-content-side {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #2c3749 0%, #16223f 100%);
+            overflow: hidden;
+        }
+
+        .primary-care-neuron-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .primary-care-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 550px;
+            /* padding: 50px 40px; */
+            /* background: rgba(0, 0, 0, 0.4); */
+            /* backdrop-filter: blur(20px); */
+            /* border-radius: 16px; */
+            /* border: 1px solid rgba(135, 206, 250, 0.2); */
+        }
+
+        .primary-care-icon {
+            width: 70px;
+            height: 48px;
+            filter: brightness(1000%) contrast(10000%);
+            /* background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); */
+            /* border-radius: 12px; */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('images/logo/favicon.png');
+            margin-bottom: 24px;
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        /* .primary-care-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            transform: rotate(45deg);
+            animation: primary-care-shimmer 2.5s infinite;
+        } */
+
+        @keyframes primary-care-shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .primary-care-title {
+            font-size: 6rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .primary-care-description {
+            font-size: 1.8rem;
+            color: #cbd5e1;
+            /* line-height: 1.6; */
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .primary-care-cta-button {
+            background: linear-gradient(135deg, #689aff 0%, #2788ff 100%);
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primary-care-cta-button:hover {
+            transform: translateY(-2px);
+            color: white;
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .primary-care-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .primary-care-cta-button:hover::before {
+            left: 100%;
+        }
+
+        .primary-care-image-side {
+            flex: 1;
+            background-image: url('images/new/tms2.jpg');
+            background-size: cover;
+            /* This makes the image cover the entire container while maintaining its aspect ratio */
+            background-position: center;
+            /* This centers the image within the container */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating if the container is larger */
+        }
+
+        .primary-care-image-placeholder {
+            width: 80%;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .primary-care-wrapper {
+                padding: 0px 0px;
+            }
+
+            .primary-care-container {
+                height: auto;
+                border-radius: 0px;
+                min-height: 500px;
+                flex-direction: column;
+            }
+
+            .primary-care-content-side,
+            .primary-care-image-side {
+                flex: none;
+                min-height: 300px;
+            }
+
+            .primary-care-content-wrapper {
+                max-width: 90%;
+                padding: 40px 30px;
+                margin: 20px auto;
+            }
+
+            .primary-care-title {
+                font-size: 2.25rem;
+            }
+
+            .primary-care-description {
+                font-size: 1rem;
+                line-height: 20px;
+            }
+
+            .primary-care-image-placeholder {
+                width: 90%;
+                height: 60%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .primary-care-container {
+                border-radius: 0px;
+                margin: 0px;
+            }
+
+            .primary-care-content-wrapper {
+                padding: 30px 24px;
+            }
+
+            .primary-care-title {
+                font-size: 2rem;
+            }
+
+            .primary-care-cta-button {
+                width: 100%;
+                padding: 16px 28px;
+            }
+        }
+
+        /* Ripple effect styles */
+        @keyframes primary-care-ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
 
 </head>
 
@@ -310,8 +552,232 @@
         </header>
         <!-- /header -->
 
+        <div class="primary-care-wrapper">
+            <div class="primary-care-container">
+                <div class="primary-care-content-side">
+                    <canvas class="primary-care-neuron-canvas" id="primaryCareNeuronCanvas"></canvas>
+                    <div class="primary-care-content-wrapper">
+                        <div class="primary-care-icon"></div>
+                        <h1 class="primary-care-title">Accelerate Your Recovery with Breakthrough Deep TMS.</h1>
+                        <p class="primary-care-description">
+                            Drug-free, Health Canada-approved brain stimulation that targets the root circuits of
+                            depression, OCD, smoking addiction
+                            - and more - in as little as three weeks.
+                        </p>
+                        <a class="primary-care-cta-button">Book a Consultation</a>
+                    </div>
+                </div>
+                <div class="primary-care-image-side">
+                    <!-- <div class="primary-care-image-placeholder">
+                        Your Image Here
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            class PrimaryCareNeuronNetwork {
+                constructor() {
+                    this.canvas = document.getElementById('primaryCareNeuronCanvas');
+                    this.scene = new THREE.Scene();
+                    this.camera = new THREE.PerspectiveCamera(75, this.canvas.clientWidth / this.canvas.clientHeight, 0.1, 1000);
+                    this.renderer = new THREE.WebGLRenderer({
+                        canvas: this.canvas,
+                        alpha: true,
+                        antialias: true
+                    });
+
+                    this.nodes = [];
+                    this.connections = [];
+                    this.nodeCount = 35;
+                    this.maxConnectionDistance = 70;
+
+                    this.init();
+                    this.createNodes();
+                    this.createConnections();
+                    this.animate();
+                    this.handleResize();
+                }
+
+                init() {
+                    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+                    this.renderer.setClearColor(0x000000, 0);
+                    this.camera.position.z = 100;
+                    this.camera.position.y = 0;
+                }
+
+                createNodes() {
+                    const nodeGeometry = new THREE.SphereGeometry(1, 12, 12);
+                    const nodeMaterial = new THREE.MeshBasicMaterial({
+                        color: 0x3b82f6,
+                        transparent: true,
+                        opacity: 0.8
+                    });
+
+                    const glowGeometry = new THREE.SphereGeometry(2.2, 12, 12);
+                    const glowMaterial = new THREE.MeshBasicMaterial({
+                        color: 0x60a5fa,
+                        transparent: true,
+                        opacity: 0.15
+                    });
+
+                    for (let i = 0; i < this.nodeCount; i++) {
+                        const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+                        const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+
+                        const x = (Math.random() - 0.5) * 160;
+                        const y = (Math.random() - 0.5) * 100;
+                        const z = (Math.random() - 0.5) * 60;
+
+                        node.position.set(x, y, z);
+                        glow.position.set(x, y, z);
+
+                        node.userData = {
+                            originalPosition: node.position.clone(),
+                            phase: Math.random() * Math.PI * 2,
+                            speed: 0.2 + Math.random() * 0.3,
+                            glow: glow
+                        };
+
+                        this.nodes.push(node);
+                        this.scene.add(node);
+                        this.scene.add(glow);
+                    }
+                }
+
+                createConnections() {
+                    const connectionMaterial = new THREE.LineBasicMaterial({
+                        color: 0x3b82f6,
+                        transparent: true,
+                        opacity: 0.4
+                    });
+
+                    for (let i = 0; i < this.nodes.length; i++) {
+                        for (let j = i + 1; j < this.nodes.length; j++) {
+                            const distance = this.nodes[i].position.distanceTo(this.nodes[j].position);
+
+                            if (distance < this.maxConnectionDistance) {
+                                const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                                    this.nodes[i].position,
+                                    this.nodes[j].position
+                                ]);
+
+                                const line = new THREE.Line(lineGeometry, connectionMaterial.clone());
+                                line.userData = {
+                                    nodeA: this.nodes[i],
+                                    nodeB: this.nodes[j],
+                                    originalOpacity: 0.4 * (1 - distance / this.maxConnectionDistance)
+                                };
+
+                                this.connections.push(line);
+                                this.scene.add(line);
+                            }
+                        }
+                    }
+                }
+
+                updateConnections() {
+                    this.connections.forEach(connection => {
+                        const nodeA = connection.userData.nodeA;
+                        const nodeB = connection.userData.nodeB;
+
+                        const positions = connection.geometry.attributes.position.array;
+                        positions[0] = nodeA.position.x;
+                        positions[1] = nodeA.position.y;
+                        positions[2] = nodeA.position.z;
+                        positions[3] = nodeB.position.x;
+                        positions[4] = nodeB.position.y;
+                        positions[5] = nodeB.position.z;
+
+                        connection.geometry.attributes.position.needsUpdate = true;
+
+                        const distance = nodeA.position.distanceTo(nodeB.position);
+                        const opacityFactor = Math.max(0, 1 - (distance / this.maxConnectionDistance));
+                        connection.material.opacity = connection.userData.originalOpacity * opacityFactor;
+                    });
+                }
+
+                animate() {
+                    requestAnimationFrame(() => this.animate());
+
+                    const time = Date.now() * 0.001;
+
+                    this.nodes.forEach(node => {
+                        const userData = node.userData;
+
+                        node.position.x = userData.originalPosition.x + Math.sin(time * userData.speed + userData.phase) * 6;
+                        node.position.y = userData.originalPosition.y + Math.cos(time * userData.speed + userData.phase * 1.1) * 4;
+                        node.position.z = userData.originalPosition.z + Math.sin(time * userData.speed * 0.8 + userData.phase) * 3;
+
+                        userData.glow.position.copy(node.position);
+
+                        const pulse = 0.8 + Math.sin(time * 2.5 + userData.phase) * 0.2;
+                        node.scale.setScalar(pulse);
+                        userData.glow.scale.setScalar(pulse * 1.3);
+
+                        userData.glow.material.opacity = 0.1 + Math.sin(time * 1.8 + userData.phase) * 0.05;
+                    });
+
+                    this.updateConnections();
+
+                    this.camera.position.x = Math.sin(time * 0.03) * 8;
+                    this.camera.position.y = Math.cos(time * 0.04) * 5;
+                    this.camera.lookAt(0, 0, 0);
+
+                    this.renderer.render(this.scene, this.camera);
+                }
+
+                handleResize() {
+                    window.addEventListener('resize', () => {
+                        const width = this.canvas.clientWidth;
+                        const height = this.canvas.clientHeight;
+
+                        this.camera.aspect = width / height;
+                        this.camera.updateProjectionMatrix();
+                        this.renderer.setSize(width, height);
+                    });
+                }
+            }
+
+            // Initialize when DOM is loaded
+            document.addEventListener('DOMContentLoaded', () => {
+                new PrimaryCareNeuronNetwork();
+            });
+
+            // CTA Button interaction
+            document.querySelector('.primary-care-cta-button').addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                            position: absolute;
+                            width: ${size}px;
+                            height: ${size}px;
+                            left: ${x}px;
+                            top: ${y}px;
+                            background: rgba(255, 255, 255, 0.3);
+                            border-radius: 50%;
+                            transform: scale(0);
+                            animation: primary-care-ripple 0.6s ease-out;
+                            pointer-events: none;
+                        `;
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        </script>
+
+
+
         <!-- page-title -->
-        <div class="page-title-homepage-2">
+        <!-- <div class="page-title-homepage-2">
             <div class="content-inner">
                 <div class="heading">
                     <h2 class="title animationtext fade-text">Accelerate Your Recovery with Breakthrough
@@ -334,7 +800,7 @@
                 <img class="lazyload" data-src="images/page-title/page-title-home-2.jpg"
                     src="images/page-title/page-title-home-2.jpg" alt="">
             </div>
-        </div>
+        </div> -->
         <!-- /page-title -->
 
         <!-- main-content -->
